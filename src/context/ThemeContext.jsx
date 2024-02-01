@@ -1,12 +1,19 @@
 import { createContext, useContext, useState } from "react";
 
 const ThemeContext = createContext();
+const isDarkMode = "isDarkMode";
 
 const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const localStorageDark = localStorage.getItem(isDarkMode);
+  const [isDark, setIsDark] = useState(
+    localStorageDark ? JSON.parse(localStorageDark) : false
+  );
 
-  const toggleDark = () => setIsDark((prev) => !prev);
-
+  const toggleDark = () =>
+    setIsDark((prev) => {
+      localStorage.setItem(isDarkMode, !prev);
+      return !prev;
+    });
   const value = { isDark, toggleDark };
 
   return (
@@ -15,5 +22,4 @@ const ThemeProvider = ({ children }) => {
 };
 
 export const useThemeContext = () => useContext(ThemeContext);
-
 export default ThemeProvider;

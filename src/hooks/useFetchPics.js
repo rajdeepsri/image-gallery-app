@@ -1,20 +1,34 @@
 import { useEffect, useState } from "react";
+const access_key = import.meta.env.VITE_ACCESS_KEY;
 
-const access_key = "hySu_Gg0UrUuviRKQmxfncWo52CSluuCJNF3QqJHuIA";
-
-export default function useFetchPics() {
-  const [images, setImages] = useState([]);
+const useFetchPics = (searchQuery) => {
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
-    const url = `https://api.unsplash.com/photos?page=1&per_page=12&client_id=${access_key}`;
-    const fetchData = async (url) => {
-      const resp = await fetch(url);
+    const searchApi = `https://api.unsplash.com/search/photos?query=${searchQuery}&page=1&per_page=12&client_id=${access_key}`;
+
+    const randomApi = `https://api.unsplash.com/photos?page=1&per_page=12&client_id=${access_key}`;
+
+    const fetchSearchedData = async (searchApi) => {
+      const resp = await fetch(searchApi);
       const data = await resp.json();
-      setImages(data);
+      setResults(data.results);
     };
 
-    fetchData(url);
-  }, []);
+    const fetchRandomData = async (randomApi) => {
+      const resp = await fetch(randomApi);
+      const data = await resp.json();
+      setResults(data);
+    };
 
-  return images;
-}
+    if (searchQuery?.trim()) {
+      fetchSearchedData(searchApi);
+    } else {
+      fetchRandomData(randomApi);
+    }
+  }, [searchQuery]);
+
+  return results;
+};
+
+export default useFetchPics;

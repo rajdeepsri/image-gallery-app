@@ -1,31 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CardList from "../components/CardList";
 import Navbar from "../components/Navbar";
 import { useThemeContext } from "../context/ThemeContext";
 
-const access_key = "hySu_Gg0UrUuviRKQmxfncWo52CSluuCJNF3QqJHuIA";
 const SearchPage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { isDark } = useThemeContext();
-  console.log(searchResults);
-
-  useEffect(() => {
-    const url = `https://api.unsplash.com/search/photos?query=${searchQuery}&page=1&per_page=12&client_id=${access_key}`;
-
-    const timer = setTimeout(() => {
-      const fetchData = async (url) => {
-        const resp = await fetch(url);
-        const data = await resp.json();
-        setSearchResults(data.results);
-      };
-      if (searchQuery.trim()) {
-        fetchData(url);
-      }
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [searchQuery]);
 
   return (
     <main className={`${isDark ? "dark" : ""}`}>

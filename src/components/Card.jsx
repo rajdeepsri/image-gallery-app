@@ -1,5 +1,5 @@
 import { AiOutlineLike } from "react-icons/ai";
-const access_key = "hySu_Gg0UrUuviRKQmxfncWo52CSluuCJNF3QqJHuIA";
+
 const Card = ({ id, user, likes, urls, alt_description, handleOnClick }) => {
   const formatNumbers = (num) => {
     const absNum = Math.abs(parseInt(num));
