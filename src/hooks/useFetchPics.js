@@ -6,7 +6,6 @@ const useFetchPics = (searchQuery) => {
 
   useEffect(() => {
     const searchApi = `https://api.unsplash.com/search/photos?query=${searchQuery}&page=1&per_page=12&client_id=${access_key}`;
-
     const randomApi = `https://api.unsplash.com/photos?page=1&per_page=12&client_id=${access_key}`;
 
     const fetchSearchedData = async (searchApi) => {
