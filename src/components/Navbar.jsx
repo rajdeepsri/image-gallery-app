@@ -11,7 +11,7 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
   return (
     <nav className="flex items-center h-16 justify-between px-4 sm:px-8 md:px-20 shadow-sm w-full bg-neutral-50 dark:bg-neutral-900 dark:border-b-[1px] dark:border-neutral-700">
       <h1 className="font-medium font-Satisfy text-2xl sm:text-2xl text-neutral-900 dark:text-neutral-100">
-        Image Gallery
+        Image Gallery App
       </h1>
       <div className="flex items-center gap-4">
         {location.pathname === "/searchResults" && (

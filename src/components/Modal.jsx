@@ -34,7 +34,7 @@ const Modal = ({ user, urls, likes, links }) => {
   }, [selectedPost]);
 
   return (
-    <div className="h-screen w-screen z-10 max-h-screen overflow-hidden fixed top-0 left-0 bg-black/75 flex items-center justify-center">
+    <div className="h-dvh w-screen z-10 max-h-dvh overflow-hidden fixed top-0 left-0 bg-black/75 flex items-center justify-center">
       <div
         className="h-[35rem] w-[50rem] bg-neutral-50 dark:bg-neutral-900 rounded-lg relative"
         ref={modalRef}

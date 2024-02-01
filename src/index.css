@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 @tailwind base;
@@ -9,4 +8,8 @@
 * {
     font-family: 'Montserrat', sans-serif;
     @apply transition-colors duration-200
+}
+
+body, html {
+    @apply bg-neutral-50 dark:bg-neutral-900
 }

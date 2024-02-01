@@ -15,10 +15,10 @@ const Hero = ({ searchQuery, setSearchQuery }) => {
         <h2 className="px-2 text-3xl font-bold text-balance sm:text-4xl">
           Download High Quality Images by Creators
         </h2>
-        <p className="text-gray-300 mt-2 text-balance text-sm sm:text-base">
+        <p className="text-gray-300 mt-2 text-balance text-xs sm:text-base">
           Over 2.4 million+ stock Images by our talented community
         </p>
-        <div className="flex gap-1 sm:gap-2 p-2 sm:p-4  rounded-md items-center bg-neutral-50 w-[90%] sm:w-[60%]">
+        <div className="flex gap-1 sm:gap-2 p-2 sm:p-4 mt-1 rounded-md items-center bg-neutral-50 w-[90%] sm:w-[60%]">
           <IoIosSearch className="text-neutral-400 text-2xl" />
           <input
             type="text"
