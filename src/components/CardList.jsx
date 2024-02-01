@@ -4,6 +4,7 @@ import Modal from "./Modal";
 
 const CardList = ({ images, debouncedSearchQuery }) => {
   const { selectedPost, setSelectedPost } = usePostContext();
+  console.log(images);
 
   return images.length > 0 ? (
     <div className="grid place-items-center w-full py-5 sm:py-10 bg-neutral-50 dark:bg-neutral-900">

@@ -1,6 +1,6 @@
 import { AiOutlineLike } from "react-icons/ai";
 
-const Card = ({ id, user, likes, urls, alt_description, handleOnClick }) => {
+const Card = ({ user, likes, urls, alt_description, handleOnClick }) => {
   const formatNumbers = (num) => {
     const absNum = Math.abs(parseInt(num));
 
@@ -19,7 +19,7 @@ const Card = ({ id, user, likes, urls, alt_description, handleOnClick }) => {
       onClick={handleOnClick}
     >
       <img
-        src={urls.regular}
+        src={urls.small}
         alt={alt_description}
         className="w-full object-cover"
       />
